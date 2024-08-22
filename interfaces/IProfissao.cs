@@ -2,8 +2,8 @@ using System;
 
 namespace Jogo_RPG;
 
-public interface IProfissao
+public interface IProfissao // Interface para as Profissões
     {
-        void Trabalhar();
-        void Descansar();
+        void Trabalhar(); 
+        void Descansar(); 
     }

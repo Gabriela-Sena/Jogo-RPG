@@ -1,7 +1,7 @@
 using System;
 
 namespace Jogo_RPG;
-public class Alquimista : IProfissao
+public class Alquimista : IProfissao // Classes para as Profissões
     {
         public void Trabalhar()
         {
