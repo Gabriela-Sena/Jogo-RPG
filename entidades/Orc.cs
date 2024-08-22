@@ -6,7 +6,7 @@ public class Orc : Personagem
     {
         public Orc()
         {
-            Raca = "Orc";
+            Raca = Raca.Orc;
             Forca = 16;
             Agilidade = 6;
             Inteligencia = 6;

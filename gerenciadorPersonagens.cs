@@ -4,53 +4,39 @@ namespace Jogo_RPG;
 
 public class GerenciadorDePersonagens
     {
-        public Personagem CriarPersonagem(string nome, string raca, string classe, IProfissao profissao)
+        public Personagem CriarPersonagem(string nome, Raca raca, Classe classe, IProfissao profissao)
         {
             Personagem personagem = null;
 
             switch (raca)
             {
-                case "Humano":
-                    personagem = new Humano();
+                case Raca.Humano:
+                    personagem = new Humano { Nome = nome, Classe = classe };
                     break;
-                case "Elfo":
-                    personagem = new Elfo();
+                case Raca.Elfo:
+                    personagem = new Elfo { Nome = nome, Classe = classe };
                     break;
-                case "Anão":
-                    personagem = new Anao();
+                case Raca.Anao:
+                    personagem = new Anao { Nome = nome, Classe = classe };
                     break;
-                case "Orc":
-                    personagem = new Orc();
+                case Raca.Orc:
+                    personagem = new Orc { Nome = nome, Classe = classe };
                     break;
-                default:
-                    throw new ArgumentException("Raça inválida.");
             }
 
-            personagem.Nome = nome;
-            personagem.Classe = classe;
-            personagem.Profissao = profissao;
-
+            Console.WriteLine($"Personagem criado: {nome}, Raça: {raca}, Classe: {classe}");
+            profissao.Trabalhar(); // Mostra a profissão do personagem
             return personagem;
         }
 
         public void Combater(Personagem p1, Personagem p2)
         {
-            while (p1.Vida > 0 && p2.Vida > 0)
+            p1.Atacar(p2);
+            if (p2.Vida > 0)
             {
-                p1.Atacar(p2);
-                if (p2.Vida > 0)
-                {
-                    p2.Atacar(p1);
-                }
+                p2.Atacar(p1);
             }
 
-            if (p1.Vida > 0)
-            {
-                Console.WriteLine($"{p1.Nome} venceu o combate!");
-            }
-            else
-            {
-                Console.WriteLine($"{p2.Nome} venceu o combate!");
-            }
+            Console.WriteLine($"{p1.Nome} Vida: {p1.Vida}, {p2.Nome} Vida: {p2.Vida}");
         }
     }

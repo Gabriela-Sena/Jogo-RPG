@@ -4,9 +4,9 @@ namespace Jogo_RPG;
 
 public class Humano : Personagem
     {
-        public Humano()
+       public Humano()
         {
-            Raca = "Humano";
+            Raca = Raca.Humano;
             Forca = 10;
             Agilidade = 10;
             Inteligencia = 10;
@@ -21,8 +21,8 @@ public class Humano : Personagem
 
         public override void Defender()
         {
-            int defesa = Inteligencia + (Agilidade / 2);
-            Vida += defesa / 2;
-            Console.WriteLine($"{Nome} se defende, recuperando {defesa / 2} de vida. Vida atual: {Vida}");
+            int defesa = Inteligencia;
+            Vida += defesa / 5;
+            Console.WriteLine($"{Nome} se defende, recuperando {defesa / 5} de vida. Vida atual: {Vida}");
         }
     }
