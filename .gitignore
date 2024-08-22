@@ -1,24 +1,44 @@
-# Compiled class file
-*.class
+# Arquivos e pastas gerados pelo .NET Core
+bin/
+obj/
 
-# Log file
+# Arquivos de configuração do Visual Studio
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arquivos de configuração do Rider
+.idea/
+
+# Arquivos temporários do sistema operacional
 *.log
+*.tmp
+*.swp
+*.swo
 
-# BlueJ files
-*.ctxt
+# Diretórios de cache do NuGet
+.nuget/
+packages/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# Arquivos de configuração do .NET
+*.csproj.user
+*.csproj.dotnet.userprefs
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+# Arquivos do Visual Studio Code
+.vscode/
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# Arquivos de build e cache do dotnet
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignorar arquivos de test coverage
+coverage/
+*.coverage
+*.coveragexml
+*.coverlet
